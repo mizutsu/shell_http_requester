@@ -23,10 +23,10 @@ esac
 
 if [ -z "${PROXY_SERVER}" ]; then
   # cURL
-  http_status_code=$(curl -s ${URL} -w "%{http_code}" -o ${OUTPUT_FILE_NAME})
+  http_status_code=$(curl -X GET -Ss ${URL} -w "%{http_code}" -o ${OUTPUT_FILE_NAME})
 else
   # cURL by using proxy
-  http_status_code=$(curl --proxy ${PROXY_SERVER}:${PROXY_PORT} -s ${URL} -w "%{http_code}" -o ${OUTPUT_FILE_NAME})
+  http_status_code=$(curl --proxy ${PROXY_SERVER}:${PROXY_PORT} -X GET -Ss ${URL} -w "%{http_code}" -o ${OUTPUT_FILE_NAME})
 fi
 
 if [ $? = 0 ]; then
