@@ -1,5 +1,5 @@
 # request_json.sh
 ## usage
 ```
-$ bash request_json.sh 'https://xxx' 'POST' '{"key":"value"}'
+$ bash http_request_get.sh 'https://xxx'
 ```
